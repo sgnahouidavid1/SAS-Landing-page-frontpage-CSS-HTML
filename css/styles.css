@@ -1,0 +1,60 @@
+* {
+    /*This  is for so when we add padding or border to an element, it doesn't change the width or height of the elements its contained*/
+    box-sizing: border-box;
+    /*This is for so that the elements are not affected by the default margin and padding of the browser*/
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background: #fff;
+}
+
+/* This is for so that the links are not underlined and have a default color */
+a {
+    /* text-decoration is a CSS property that specifies the decoration added to text, such as underline, overline, or line-through */
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    /* list-style is a CSS property that specifies the type of list item marker to use */
+    /* none means that no marker will be displayed */
+    list-style: none;
+}
+
+img {
+    /* This is for so that the images are responsive and do not overflow their container */
+    /* max-width is a CSS property that specifies the maximum width of an element */
+    max-width: 100%;
+ 
+}
+
+/* Navigation Bar */
+.navbar{
+    /* This is for so that the navigation bar has a background color */
+    background-color: #fff;
+    /* This is for so that the navigation bar has some padding on the top and bottom of 20 pixel */
+    padding: 20px 0;
+
+}
+/* Utility Classes */
+/* defualt container class */
+.container {
+    /* This is for so that the container has a maximum width and is centered */
+    max-width: 1100px;
+    /* This is for so that the container is centered horizontally */
+    margin: 0 auto;
+    /* This is for so that the container has some padding on the left and right of 15 pixel */
+    padding: 0 15px;
+}
+/* small container class */
+.container-small {
+    /* This is for so that the container has a maximum width of 800 pixel and is centered */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
