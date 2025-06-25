@@ -5,19 +5,28 @@
     margin: 0;
     padding: 0;
 }
-
+/*Custom CSS Variables*/
+:root {
+    --primary-color: #4891ff; /* This is for so that we can use the primary color throughout the CSS */
+    --primary-font: 'Poppins', sans-serif; /* This is for so that we can use the primary font throughout the CSS */
+    --light-color: #f4f4f6; /* This is for so that we can use the light color throughout the CSS */
+    --dark-color: #111; /* This is for so that we can use the dark color throughout the CSS */
+    --semidark-color: lightgray; /* This is for so that we can use the semi-dark color throughout the CSS */
+    --secondarydark-color: #333; /* This is for so that we can use the secondary dark color throughout the CSS */
+}
 body {
-    font-family: Poppins, sans-serif;
+    /* Using the CSS variable from primary font 'Poppins' */
+    font-family: var(--primary-font);
     font-size: 16px;
     line-height: 1.5;
-    background: #fff;
+    background: var(--light-color); /* This is for so that the body has a light background color */
 }
 
 /* This is for so that the links are not underlined and have a default color */
 a {
     /* text-decoration is a CSS property that specifies the decoration added to text, such as underline, overline, or line-through */
     text-decoration: none;
-    color: #333;
+    color: var(--dark-color);
 }
 
 ul {
@@ -36,13 +45,262 @@ img {
 /* Navigation Bar */
 .navbar{
     /* This is for so that the navigation bar has a background color */
-    background-color: #fff;
+    background-color: var(--light-color);
     /* This is for so that the navigation bar has some padding on the top and bottom of 20 pixel */
-    padding: 20px 0;
+    padding: 20px;
 
 }
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .nav-links {
+    display: flex;   
+}
+.navbar .nav-links li a {
+    padding: 10px 20px; /* adding padding to the Home, About Us, Blog, Login In links. 10 pixels to the top and 
+    bottom and 20 pixels to the left and right. */
+    display: block;  /* This is for so that the links are displayed as block elements, which means they will take up the full width of their container */
+    font-weight: 600; /* This is for so that the links have a font weight of 600, which means they will be semi-bold */
+    transition: 0.5s; /* This is for so that the links have a smooth transition when hovered over */
+}
+.navbar .nav-links li a:hover {
+   color: var(--primary-color); /* This is for so that the links change color to blue when hovered over */
+}
+
+.navbar .navbar ul li:last-child a {
+    /* This is for so that the last link in the navigation bar has a margin on the left of 20 pixels */
+    margin-left: 10px;
+}
+.navbar .navbar ul li:last-child a  i {
+    margin-right: 10px;
+}
+
+/* Hero Section */
+.hero {
+    margin-bottom: 50px; /* This is for so that the hero section has a margin of 50 pixels on the bottom */
+}
+.hero .container {
+    background: url('../images/hero-bg.png') no-repeat; /* This is for so that the hero section has a background image */
+    background-size: contain; /* This is for so that the background image of the hero section is contained within its container */
+    background-position: center bottom; /* This is for so that the background image of the hero section is positioned at the center bottom of its container */;
+    height: 550px; /* This is for so that the hero section has a height of 550 pixels */
+}
+.hero .hero-content h1 {
+    width: 70%;
+    /* This is for so that the heading takes up 70% of the width of its container */
+}
+
+.hero .hero-content p {
+    width: 50%;
+    /* This is for so that the paragraph takes up 50% of the width of its container */
+    margin: 20px 0 20px;
+    /* This is for so that the paragraph has a margin of 20 pixels on the top and bottom, and 0 pixels on the left and right */
+}
+
+.hero .hero-buttons .btn:last-child {
+    /* This is for so that the last button in the hero section has a margin on the left of 10 pixels */
+    margin-left: 10px;
+}
+
+.hero .hero-buttons .btn:last-child i {
+    /* This is for so that the last button in the hero section has an icon with a margin on the right of 10 pixels */
+    margin-right: 10px;
+}
+/* Video Section */
+.video { 
+    padding: 10px 0 40px; /* This is for so that the video section has some padding on the top of 10 pixels and on the bottom of 40 pixels */
+    border-bottom: 1px solid #ccc; /* This is for so that the testimonial heading has a top border of 1 pixel solid gray */
+        
+}
+.video .video-content {
+    display:  flex;
+    flex-direction: column; /* This is for so that the video section has a column layout */
+    align-items: center; /* This is for so that the video section is centered horizontally same goes for the button.*/
+}
+.video .video-preview {
+    margin-bottom: 20px; /* This is for so that the video preview has a margin of 20 pixels on the bottom */
+}
+
+/* Testimonial section */
+.testimonials {
+    padding: 40px 0; /* This is for so that the testimonial section has some padding on the top of 40 pixels and on the bottom of 40 pixels and 0px on the left and right to fill in the gap */
+}
+.testimonials .testimonials-heading {
+    text-align: start; /* This is for so that the testimonial heading is aligned to the start */
+    width: 55%; /* This is for so that the testimonial heading takes up 55% of the width of its container */
+    margin-bottom: 40px; /* This is for so that the testimonial heading has a margin of 40 pixels on the bottom */
+}
+
+.testimonials .testimonials-grid {
+    display : grid; /* This is for so that the testimonial section has a grid layout */
+    gap: 30px; /* This is for so that the testimonial section has a gap of 30 pixels between the grid items */
+    margin: 100px auto; /* This is for so that the testimonial section has a margin of 100 pixels on the top and bottom, and auto on the left and right to center it */
+    grid-template-columns: repeat(3, 1fr); /* This is for so that the testimonial section has three equal columns */
+    /* 1fr means one fraction of the available space, so each column will take up one-third of the available space */
+}
+
+.testimonials .card {
+    background: var(--semidark-color); /* This is for so that the testimonial card has a semi-dark background color */
+    border-radius: 10px; /* This is for so that the testimonial card has rounded corners with a radius of 10 pixels */
+    padding: 30px; /* This is for so that the testimonial card has some padding */
+    box-shadow: rgba(17, 17, 46, 0.15) 0px 48px 100px 0px; /* Shadow effect */
+    margin-bottom: 10px; /* This is for so that the testimonial card has a margin of 10 pixels on the bottom */
+}
+
+.testimonials .card .card__quote {
+    color: var(--secondarydark-color); /* This is for so that the testimonial card quote has a dark color */
+    font-size: 1.2rem; /* This is for so that the testimonial card quote has a font size of 1.2 times the root font size */
+    font-style: italic; /* This is for so that the testimonial card quote has an italic font style */
+}
+
+.testimonials .card .company__name {
+    color: var(--secondarydark-color);  /* This is for so that the testimonial card person's designation has a semi-dark color */
+}
+
+ .testimonials .testimonials-grid div .person__name {
+    margin-top: 45px; /* This is for so that the testimonial card person's name has a margin of 45 pixels on the top */
+    color: var(--secondarydark-color);  /* This is for so that the testimonial card person's name has a semi-dark color */
+    text-decoration: underline; /* This is for so that the testimonial card person's name has an underline */
+    font-weight: bold; /* This is for so that the testimonial card person's name has a font weight of 600, which means it will be semi-bold */
+}
+
+
+/* Pricing Section */
+.pricing .pricing-subheading {
+    margin-bottom: 40px; /* This is for so that the pricing section subheading has a margin of 40 pixels on the bottom */
+}
+.pricing .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 488px); /* This is for so that the pricing section has two equal columns */;
+    justify-content: center; /* This is for so that the pricing section is centered horizontally */
+    gap: 30px; /* This is for so that the pricing section has a gap of 30 pixels between the grid items */
+}
+.pricing .plan-subheading {
+    margin-bottom: 40px; /* This is for so that the pricing section plan subheading has a margin of 20 pixels on the bottom */
+}
+.pricing .pricing-card-price {
+    margin-bottom: 40px; /* This is for so that the pricing card price has a margin of 40 pixels on the bottom */
+    padding: 20px 0; /* This is for so that the pricing card price has some padding on the top and bottom of 20 pixels */
+    border-bottom: 1px solid #ccc;
+}
+.pricing ul {
+    margin: 30px 0; /* This is for so that the pricing section has a margin of 30 pixels on the top and bottom, and 0 pixels on the left and right */
+}
+.pricing ul li {
+    margin: 20px 0; /* This is for so that the pricing section list items have a margin of 30 pixels on the top and bottom, and 0 pixels on the left and right */
+}
+.pricing ul li i {
+    margin-right: 10px; /* This is for so that the pricing section list item icons have a margin of 10 pixels on the right */
+}
+.pricing .card {
+    border-radius: 20px; /* This is for so that the pricing card has rounded corners with a radius of 20 pixels */
+    box-shadow: rgba(17, 17, 46, 0.15) 0px 48px 100px 0px; /* Shadow effect */
+    margin: 10px 0 10px; /* This is for so that the pricing card has a margin of 10 pixels on the top and bottom, and 0 pixels on the left and right */
+    padding: 20px; /* This is for so that the pricing card has some padding */
+}
+.pricing div:nth-child(1) a {
+    margin-top: 153px; /* This is for so that the first pricing card has a margin of 150 pixels on the top */
+}
+.pricing .pricing-footer {
+    text-align: center;
+    margin: 30px 0 10px;
+}
+
+
+.pricing .pricing-footer i  {
+    margin-left: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.pricing .pricing-footer .view-features {
+    font-weight: bold;
+}
+/* Frequently asked questions */
+.faq {
+    padding: 40px 0;
+}
+.faq .faq-group {
+    border-bottom: 1px solid #111;
+    padding-bottom: 20px;
+}
+/* We are making the the group header position relative because we have to
+reposition the icon (minus or addition sign) within the group header. We can than set the  
+position of the icon to absolute so we put the icon wherever we want it */
+.faq .faq-group .faq-group-header {
+    padding: 20px 0;
+    margin-bottom: 15px ;
+    position: relative;
+}
+/* Icon positioning */
+.faq .faq-group .faq-group-header i {
+    position: absolute;
+    right: 0;
+    top: 45px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.faq .faq-group .faq-group-header h4 {
+    font-weight: 600;
+    width: 95%; /* Setting the width of the header short of 100% so it can avoid
+    run into the icon */
+}
+
+.faq .faq-group .faq-group-body {
+    display: none; /* Hides the subtext answer for the frequantly asked questions. */
+}
+/* This is for if the property with the class name faq-group-body has the class the of open attach to it. */
+.faq .faq-group .faq-group-body.open {
+    display: block; /* display the subtext answer for the frequantly asked questions. */
+}
+
+.faq ul.faq-menu {
+    max-width: 400px;
+    margin: auto; /* Setting the center of the screen horziontily */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 10px;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.faq .faq-menu li {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.faq .faq-menu .active {
+    background: var(--primary-color);
+}
+/* Buttons */
+.btn {
+    display: inline-block; /* This is for so that the buttons are displayed as inline-block elements, which means they will take up only the space they need */
+    padding: 13px 20px; /* This is for so that the buttons have some padding on the top and bottom of 13 pixels and on the left and right of 20 pixels */
+    background: var(--semidark-color); /* This is for so that the buttons have a semi-dark background color */
+    border-radius: 10px; /* This is for so that the buttons have rounded corners with a radius of 10 pixels */
+    color: var(--secondarydark-color); /* This is for so that the buttons have a dark color */
+    font-weight: 600;
+    text-align: center; /* This is for so that the text inside the buttons is centered */
+    text-decoration: none; /* This is for so that the buttons do not have any text decoration, such as underline */
+    border: none; /* This is for so that the buttons do not have any border */
+    cursor: pointer; /* This is for so that the buttons have a pointer cursor when hovered over */
+    transition: 0.5s; /* This is for so that the buttons have a smooth transition when hovered over */
+}
+/* This is for so that the buttons have a hover effect */
+.btn:hover {
+    opacity: 0.8; /* This is for so that the buttons become slightly transparent when hovered over */
+}
+
 /* Utility Classes */
-/* defualt container class */
+/* This is for so that the utility classes can be used to apply common styles to elements */
+
+/* default container class */
 .container {
     /* This is for so that the container has a maximum width and is centered */
     max-width: 1100px;
@@ -57,4 +315,91 @@ img {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 15px;
+}
+/* Button Classes */
+.btn-primary {
+    background: var(--primary-color); /* This is for so that the primary button has a primary color background */
+    color: var(--light-color); /* This is for so that the primary button has a light color text */
+}
+
+.btn-light {
+    background: var(--semidark-color); /* This is for so that the light button has a semi-dark color background */
+    color: var(--secondarydark-color); /* This is for so that the light button has a semi-dark color text */
+}
+
+.btn-dark {
+    background: var(--dark-color); /* This is for so that the dark button has a dark color background */
+    color: var(--light-color); /* This is for so that the dark button has a light color text */
+}
+
+.btn-block {
+    display: block; /* This is for so that the button takes up the full width of its container */
+    width: 100%; /* This is for so that the button takes up the full width of its container */
+}
+/* Text Classes */
+.text-xxl {
+    font-size: 3rem; /* This is for so that the text has a font size of 3 times the root font size */
+    font-weight: 600; /* This is for so that the text has a font weight of 600, which means it will be semi-bold */
+    line-height: 1.2; /* This is for so that the text has a line height of 1.2, which means it will be slightly more spaced out */
+    margin: 40px 0 20px; /* This is for so that the text has a margin of 40 pixels on the top, 20 pixels on the bottom, and 0 pixels on the left and right */
+}
+
+.text-xl {
+    font-size: 2.2rem;
+    /* This is for so that the text has a font size of 2.2 times the root font size */
+    font-weight: bold;
+    /* This is for so that the text has a font weight of normal */
+    line-height: 1.4;
+    /* This is for so that the text has a line height of 1.4, which means it will be slightly more spaced out */
+    margin: 40px 0 20px;
+    /* This is for so that the text has a margin of 40 pixels on the top, 20 pixels on the bottom, and 0 pixels on the left and right */
+}
+
+.text-lg {
+    font-size: 1.8rem; /* This is for so that the text has a font size of 1.8 times the root font size */
+    font-weight: normal; /* This is for so that the text has a font weight of normal */
+    line-height: 1.4; /* This is for so that the text has a line height of 1.4, which means it will be slightly more spaced out */
+    margin: 30px 0 20px; /* This is for so that the text has a margin of 30 pixels on the top, 20 pixels on the bottom, and 0 pixels on the left and right */
+}
+
+.text-md {
+    font-size: 1.2rem; /* This is for so that the text has a font size of 1.2 times the root font size */
+    font-weight: normal; /* This is for so that the text has a font weight of normal */
+    line-height: 1.4; /* This is for so that the text has a line height of 1.4, which means it will be slightly more spaced out */
+    margin: 20px 0 10px; /* This is for so that the text has a margin of 20 pixels on the top, 10 pixels on the bottom, and 0 pixels on the left and right */
+}
+
+.text-sm {
+    font-size: 0.9rem; /* This is for so that the text has a font size of 1 times the root font size */
+    font-weight: normal; /* This is for so that the text has a font weight of normal */
+    line-height: 1.4; /* This is for so that the text has a line height of 1.4, which means it will be slightly more spaced out */
+    margin: 5px 0 10px; /* This is for so that the text has a margin of 10 pixels on the top and bottom, and 0 pixels on the left and right */
+}
+
+.text-italic {
+    font-style: italic; /* This is for so that the text has an italic font style */
+}
+
+.text-center {
+    text-align: center; /* This is for so that the text is centered */
+}
+/* Background Classes */
+.bg-dark {
+    background: var(--secondarydark-color);
+    color:#fff; /* This is for so that the background color is dark and the text color is white */
+}
+
+.bg-light {
+    background: var(--light-color);
+    color: #333; /* This is for so that the background color is light and the text color is dark */
+}
+
+.bg-primary {
+    background: var(--primary-color);
+    color: #fff; /* This is for so that the background color is primary and the text color is white */
+}
+
+.bg-black {
+    background: #000;
+    color: #fff; /* This is for so that the background color is black and the text color is white */
 }
