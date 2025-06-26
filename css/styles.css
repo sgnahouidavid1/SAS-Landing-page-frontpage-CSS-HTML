@@ -278,6 +278,59 @@ position of the icon to absolute so we put the icon wherever we want it */
 .faq .faq-menu .active {
     background: var(--primary-color);
 }
+/* Footer */
+.footer .footer-logo {
+    padding: 50px 0 20px;
+}
+.footer .footer-groups {
+    display: grid;
+    grid-template-columns: 400px 600px;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+.footer .newsletter-card {
+    padding: 0px 20px 10px;
+    border-radius: 10px;
+}
+.footer .newsletter-card .newsletter-card-subheading {
+    padding: 0 0 10px;
+}
+.footer .newsletter-card input[type='email'] {
+    padding: 13px 20px;
+    font-size: 16px;
+    max-width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.footer .newsletter-card a {
+    margin-left: 15px;
+}
+.footer .footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-self: top;
+    justify-self: center;
+}
+.footer .footer-links div:nth-child(2) {
+    padding: 0px 40px 0px;
+}
+
+.footer .footer-links .links ul li {
+    padding: 10px 0px 0px;
+}
+
+.footer .footer-links .links ul li a {
+    color: var(--semidark-color);
+}
+.footer .footer-icons {
+    padding-bottom: 50px;
+}
+.footer .footer-icons i:nth-child(2) {
+    margin-left: 10px;
+}
+.footer .copyrights {
+    color: var(--semidark-color);
+}
 /* Buttons */
 .btn {
     display: inline-block; /* This is for so that the buttons are displayed as inline-block elements, which means they will take up only the space they need */
@@ -310,7 +363,7 @@ position of the icon to absolute so we put the icon wherever we want it */
     padding: 0 15px;
 }
 /* small container class */
-.container-small {
+.container-sm {
     /* This is for so that the container has a maximum width of 800 pixel and is centered */
     max-width: 800px;
     margin: 0 auto;
@@ -403,3 +456,68 @@ position of the icon to absolute so we put the icon wherever we want it */
     background: #000;
     color: #fff; /* This is for so that the background color is black and the text color is white */
 }
+
+/* Hamburger Button */
+.hamburger-button {
+    display: none; /* hiding the hamburger button by default because we only want to show 
+    the hamburger button opn specific screen sizes. */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000; /* z-index property that controls the stacking order of positioned elements
+    on a web page determining which elements appear in front of or behind others,
+    especially when they overlap. So here we want the hamburger button appear in front of the navbar menu */
+}
+
+.hamburger-button .hamburger-line {
+    /* creating the three lines of the hamburger-button in CSS */ 
+    width: 30px; 
+    height: 3px;
+    background: #333 ;
+    margin: 6px 0px 6px;
+    border-radius: 5px;
+}
+
+/* Mobile Menu */
+.mobile-menu{
+    position: fixed;
+    top: 0px;
+    right: -300px;
+    width: 250px;
+    height: 100%;
+    z-index: 100;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+}
+
+/* Media Queries */ 
+@media (max-width: 1060px) {
+    /* All these changes will only apply if the screen website display us underv 1160 pixels */
+   
+}
+@media (max-width: 960px) {
+    /* All these changes will only apply if the screen website display us under 960 pixels */
+    
+}
+
+@media (max-width: 670px) {
+    /* All these changes will only apply if the screen website display us under 670 pixels */
+    /* hide the the navbar main menu if website screen size is under 670 pixels */
+    .navbar .menu {
+        display: none;
+    }
+
+    .navbar .hamburger-button {
+        display: block; /* showing the hamburger button when the website screen display size is 670 pixel;s or lower. */
+    }
+
+}
+
+@media (max-width: 500px) {
+    /* All these changes will only apply if the screen website display us under 500 pixels */
+
+}
+
+
