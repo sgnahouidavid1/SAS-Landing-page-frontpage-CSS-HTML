@@ -44,10 +44,17 @@ img {
 
 /* Navigation Bar */
 .navbar{
+    width: 100%;
     /* This is for so that the navigation bar has a background color */
-    background-color: var(--light-color);
     /* This is for so that the navigation bar has some padding on the top and bottom of 20 pixel */
+    background: var(--light-color);
     padding: 20px;
+    /* allows the the navbar to move along with the scrolling of the website */ 
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+   
 
 }
 .navbar .container {
@@ -80,6 +87,7 @@ img {
 
 /* Hero Section */
 .hero {
+    margin-top: 90px;
     margin-bottom: 50px; /* This is for so that the hero section has a margin of 50 pixels on the bottom */
 }
 .hero .container {
@@ -232,8 +240,8 @@ reposition the icon (minus or addition sign) within the group header. We can tha
 position of the icon to absolute so we put the icon wherever we want it */
 .faq .faq-group .faq-group-header {
     padding: 20px 0;
-    margin-bottom: 15px ;
-    position: relative;
+    margin-bottom: 15px;
+    position: relative; 
 }
 /* Icon positioning */
 .faq .faq-group .faq-group-header i {
