@@ -14,6 +14,8 @@ and a little of javascript to create the hamburger menu and the FAQ accordion.
 
 
 ## Demo Image:
+![heropage](https://github.com/user-attachments/assets/d9caecc9-854d-40b8-9f3d-bcfb813f7a0f)
 
-![HeroPage](../images/heropage)
+
+
 
