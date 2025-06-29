@@ -15,5 +15,5 @@ and a little of javascript to create the hamburger menu and the FAQ accordion.
 
 ## Demo Image:
 
-![HeroPage]()
+![HeroPage](../images/heropage)
 
