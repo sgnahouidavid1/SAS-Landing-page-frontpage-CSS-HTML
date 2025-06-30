@@ -20,6 +20,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     background: var(--light-color); /* This is for so that the body has a light background color */
+    overflow-x: hidden; /* This is for so that the body does not have a horizontal scrollbar */
 }
 
 /* This is for so that the links are not underlined and have a default color */
@@ -77,11 +78,11 @@ img {
    color: var(--primary-color); /* This is for so that the links change color to blue when hovered over */
 }
 
-.navbar .navbar ul li:last-child a {
+.navbar .nav-links  li:last-child a {
     /* This is for so that the last link in the navigation bar has a margin on the left of 20 pixels */
     margin-left: 10px;
 }
-.navbar .navbar ul li:last-child a  i {
+.navbar .nav-links li:last-child a  i {
     margin-right: 10px;
 }
 
@@ -301,7 +302,7 @@ position of the icon to absolute so we put the icon wherever we want it */
     border-radius: 10px;
 }
 .footer .newsletter-card .newsletter-card-subheading {
-    padding: 0 0 10px;
+    padding-bottom: 10px;
 }
 .footer .newsletter-card input[type='email'] {
     padding: 13px 20px;
@@ -473,6 +474,7 @@ position of the icon to absolute so we put the icon wherever we want it */
     border: none;
     cursor: pointer;
     padding: 10px;
+    margin-right: 70px;
     z-index: 1000; /* z-index property that controls the stacking order of positioned elements
     on a web page determining which elements appear in front of or behind others,
     especially when they overlap. So here we want the hamburger button appear in front of the navbar menu */
@@ -491,13 +493,73 @@ position of the icon to absolute so we put the icon wherever we want it */
 .mobile-menu{
     position: fixed;
     top: 0px;
-    right: -300px;
+    /* we're setting the right position to -300 to remove the moblie menu from view 
+    when the website screen size is not in moblie screen size. */ 
+    right: -300px; 
+    padding: 0px 10px 0px ;
     width: 250px;
-    height: 100%;
+    height: 35%;
     z-index: 100;
-    background: #fff;
+    background: var(--light-color);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease-in-out;
+}
+/* This moblie-menu class with the added active is for when the website is in moblie screen size 
+all the css style in this class will applied to the website. */
+.mobile-menu.active {
+    right: 0px; /* setting the right position to 0 allow the moblie menu to be visable when the 
+    screen is in mobile screen size */
+}
+.mobile-menu ul {
+    margin-top: 60px;
+}
+.mobile-menu li a:hover {
+    color: var(--primary-color); /* This is for so that the links change color to blue when hovered over */
+}
+.mobile-menu  ul li a {
+    font-size: 20px;
+    transition: 0.3;
+}
+.mobile-menu li .mobile-home-link {
+    padding: 10px 0px;
+        /* adding padding to the Home link. 10 pixels to the top and 
+        bottom and 20 pixels to the left and right. */
+        display: block;
+        /* This is for so that the links are displayed as block elements, which means they will take up the full width of their container */
+        font-weight: 600;
+        /* This is for so that the links have a font weight of 600, which means they will be semi-bold */
+        text-align: center;
+} 
+
+.mobile-menu li .mobile-aboutUs-link {
+    padding: 10px 0px;
+        /* adding padding to the About Us link. 10 pixels to the top and 
+        bottom and 20 pixels to the left and right. */
+        display: block;
+        /* This is for so that the links are displayed as block elements, which means they will take up the full width of their container */
+        font-weight: 600;
+        /* This is for so that the links have a font weight of 600, which means they will be semi-bold */
+        text-align: center;
+}
+
+.mobile-menu li .mobile-blog-link {
+    padding: 10px 0px;
+        /* adding padding to the Blog link. 10 pixels to the top and 
+        bottom and 20 pixels to the left and right. */
+        display: block;
+        /* This is for so that the links are displayed as block elements, which means they will take up the full width of their container */
+        font-weight: 600;
+        /* This is for so that the links have a font weight of 600, which means they will be semi-bold */
+        text-align: center;
+    
+}
+.mobile-menu li:last-child a  {
+    width: 100%;
+    padding: 10px 0 10px;
+}
+
+.mobile-menu li:last-child a i {
+    margin-right: 10px;
 }
 
 /* Media Queries */ 
@@ -507,6 +569,9 @@ position of the icon to absolute so we put the icon wherever we want it */
 }
 @media (max-width: 960px) {
     /* All these changes will only apply if the screen website display us under 960 pixels */
+    .text-xxl {
+        font-size: 2.5rem;
+    }
     
 }
 
@@ -516,16 +581,97 @@ position of the icon to absolute so we put the icon wherever we want it */
     .navbar .menu {
         display: none;
     }
-
+    
     .navbar .hamburger-button {
         display: block; /* showing the hamburger button when the website screen display size is 670 pixel;s or lower. */
     }
+
+    /* changing the image for smaller mobile screen sizes of 670 pixels. */
+    .hero .container {
+        background: url('../images/hero-bg-mobile.png') no-repeat;
+        background-size: 350px 400px;
+        background-position: bottom;
+        height: 770px;
+    }
+    .hero .hero-content .hero-heading {
+        width: 100%;
+        text-align: center;
+        
+    }
+    .hero .hero-content .hero-text { 
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero  .hero-content .hero-buttons {
+        width: 100%;
+        padding-top: 20px;
+        text-align: center;
+    }
+    .hero .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 0px 10px 10px;
+    }
+
+    .video .video-content .btn {
+        display: block;
+        width: 100%;
+        font-size: 1.2rem;
+    }
+    .testimonials .testimonials-heading {
+        width: 100%; 
+        text-align: center;
+    }
+    .testimonials .testimonials-grid {
+        grid-template-columns: 1fr; /* This is for so that the testimonial section has one column */
+    }
+    .pricing .pricing-grid {
+        display: grid;
+        padding: 0px 10px;
+        grid-template-columns: 1fr; /* This is for so that the pricing section has one column */
+       
+    }
+    .pricing .pricing-footer {
+        padding: 0px 10px;
+        text-align: center;
+    }
+    .faq  .container .faq-heading {
+        padding: 0px 10px;
+        text-align: center;
+    }
+
+    .footer .footer-groups {
+        grid-template-columns: 1fr; /* This is for so that the footer section has one column */
+    }
+    .footer .footer-links {
+        display: grid;
+        grid-template-columns: 1fr; /* This is for so that the footer links section has one column */
+        text-align: center;
+        gap: 20px; /* This is for so that the footer links section has a gap of 20 pixels between the grid items */
+    }
+    .footer .footer-icons {
+        text-align: center; /* This is for so that the footer icons section is centered */
+    }
+    /* Text Utility Classes for Mobile Screens */ 
+    .text-xl {
+      font-size: 1.9rem;   
+    }
+    .text-lg {
+        font-size: 1.5rem;
+    }
+    .text-md {
+        font-size: 1.1rem;
+    }
+
 
 }
 
 @media (max-width: 500px) {
     /* All these changes will only apply if the screen website display us under 500 pixels */
-
+    .text-xxl {
+        font-size: 2rem; /* This is for so that the text has a font size of 2 times the root font size */
+    }
 }
 
 

@@ -38,3 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+/* Mobile Menu View */
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerButton = document.querySelector('.hamburger-button')
+    const moblieMenu = document.querySelector('.mobile-menu')
+    hamburgerButton.addEventListener('click', () => 
+        moblieMenu.classList.toggle('active')
+    );
+});
